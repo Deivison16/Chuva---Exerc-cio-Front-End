@@ -171,12 +171,10 @@
 
       <textarea class="texto" disabled></textarea>
 
-      <button class="enviar">Enviar</button>
+      <button id="enviar" class="enviar">Enviar</button>
 
     </form>
-
   </span>
-
   
     <div class="topico1">
       <p class="assunto_topico">Assunto da pergunta aparece aqui</p>
@@ -233,6 +231,77 @@
 </html>
 
 <script>
+
+var painel_resumo=document.getElementById("painel_resumo")
+
+var painel_discussoes=document.getElementById("painel_discussoes");
+
+var topico2=document.getElementById("topico2");
+
+var footer=document.getElementById("footer");
+
+function vermais()
+{
+  var pontos=document.getElementById("pontos");
+  var maisTexto=document.getElementById("mais");
+  var btnvermais=document.getElementById("btnvermais");
+
+  if(pontos.style.display == "none")
+  {
+    pontos.style.display="inline";
+    maisTexto.style.display="none";
+    btnvermais.innerHTML="ver mais";
+    painel_resumo.style.height="189px";
+    painel_discussoes.style.top="880px";
+    footer.style.top="0px";
+  }
+  else
+  {
+    pontos.style.display="none";
+    maisTexto.style.display="inline";
+    btnvermais.innerHTML="ver menos";
+    painel_resumo.style.height="554px";
+    painel_discussoes.style.top="1240px";
+    footer.style.top="400px";
+  }
+} 
+
+function respostas()
+{
+  var ahh=document.getElementById("ahh");
+  var respostas=document.getElementById("respostas");
+  var ver_respostas=document.getElementById("ver_respostas");
+
+  if(ahh.style.display == "none")
+  {
+    ahh.style.display="inline";
+    respostas.style.display="none";
+    topico2.style.height="149px";
+    painel_discussoes.style.height="650px";
+    ver_respostas.innerHTML="ver respostas";
+    footer.style.top="0px";
+  }
+  else
+  {
+    ahh.style.display="none";
+    respostas.style.display="inline";
+    topico2.style.height="670px";
+    painel_discussoes.style.height="1185px";
+    ver_respostas.innerHTML="esconder respostas";
+    footer.style.top="550px";
+  }
+}
+
+function formulario()
+{
+  var parte1=document.getElementById("parte1");
+  var formulario=document.getElementById("form");
+  var criar_topico=document.getElementById("criar_topico");
+
+  parte1.style.display="none";
+  formulario.style.display="inline";
+}
+
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
     x = document.getElementsByClassName("custom-select");
@@ -311,78 +380,7 @@
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
-</script>
-
-<script>
-
-var painel_resumo=document.getElementById("painel_resumo")
-
-var painel_discussoes=document.getElementById("painel_discussoes");
-
-var topico2=document.getElementById("topico2");
-
-var footer=document.getElementById("footer");
-
-function vermais()
-{
-  var pontos=document.getElementById("pontos");
-  var maisTexto=document.getElementById("mais");
-  var btnvermais=document.getElementById("btnvermais");
-
-  if(pontos.style.display == "none")
-  {
-    pontos.style.display="inline";
-    maisTexto.style.display="none";
-    btnvermais.innerHTML="ver mais";
-    painel_resumo.style.height="189px";
-    painel_discussoes.style.top="880px";
-    footer.style.top="0px";
-  }
-  else
-  {
-    pontos.style.display="none";
-    maisTexto.style.display="inline";
-    btnvermais.innerHTML="ver menos";
-    painel_resumo.style.height="554px";
-    painel_discussoes.style.top="1240px";
-    footer.style.top="400px";
-  }
-} 
-
-function respostas()
-{
-  var ahh=document.getElementById("ahh");
-  var respostas=document.getElementById("respostas");
-  var ver_respostas=document.getElementById("ver_respostas");
-
-  if(ahh.style.display == "none")
-  {
-    ahh.style.display="inline";
-    respostas.style.display="none";
-    topico2.style.height="149px";
-    painel_discussoes.style.height="650px";
-    ver_respostas.innerHTML="ver respostas";
-    footer.style.top="0px";
-  }
-  else
-  {
-    ahh.style.display="none";
-    respostas.style.display="inline";
-    topico2.style.height="670px";
-    painel_discussoes.style.height="1185px";
-    ver_respostas.innerHTML="esconder respostas";
-    footer.style.top="550px";
-  }
-}
-
-function formulario()
-{
-  var parte1=document.getElementById("parte1");
-  var formulario=document.getElementById("form");
-  var criar_topico=document.getElementById("criar_topico");
-
-  parte1.style.display="none";
-  formulario.style.display="inline";
-}
 
 </script>
+
+

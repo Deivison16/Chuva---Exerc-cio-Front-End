@@ -1068,3 +1068,7 @@ border: none;
 
 color: #FFFFFF;
 }
+
+#topico_enviado{
+    display: none;
+}
